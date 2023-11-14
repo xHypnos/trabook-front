@@ -1,0 +1,38 @@
+.todo-title, *{
+  font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, span{
+  font-family: 'Volkhov', serif;
+}
+
+.secure-with{
+  max-width: 1280px !important;
+  margin: auto;
+}
+
+.trabook-bg-withe{
+  background-color: #FFFFFF;
+}
+
+.trabook-bg-sky{
+  background-color: #FEFCFA;
+}
+
+.trabook-bg-aqua{
+  background-color: #F7F8FC;
+}
+
+.fs-7{
+  font-size: 12px;
+}
+
+.hover-card{
+  transition: 400ms ease-in-out;
+}
+
+.hover-card:hover{
+  transition: 400ms ease-in-out;
+  cursor: pointer;
+  transform: scale(1.05);
+}
