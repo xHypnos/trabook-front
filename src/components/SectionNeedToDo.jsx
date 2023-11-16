@@ -15,7 +15,7 @@ const SectionNeedToDo = () => {
                 <p className="text-center w-75 m-auto text-secondary">We ensure that you’ll embark on a perfectly planned, safe vacation at a price you can afford.</p>
             </Col>
         </Row>
-        <Row className="secure-width gap-4 d-flex justify-content-around mt-5 secure-with">
+        <Row className="flex-column flex-md-row secure-width gap-4 d-flex justify-content-around mt-5 secure-with">
             <Col className="hover-card-deal rounded shadow pt-5 p-3 trabook-bg-withe">
                 <img className="mb-3" src={ToDoImg} alt="card_img"/>
                 <h4 className="todo-title fw-bold">Sign Up</h4>

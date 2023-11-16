@@ -5,7 +5,7 @@ import TrabookLogo from '../assets/img/logo_trabook.svg';
 
 const Footer = () => {
     return <Container fluid className="px-5 d-flex flex-column trabook-bg-sky">
-        <Row>
+        <Row className="secure-width m-auto flex-column flex-sm-row">
             <Col>
                 <h3 className="d-flex align-items-center fs-4">Trabook <img className="ps-2" src={TrabookLogo} alt="logo"/></h3>
                 <p className="text-secondary">Book your trip in minute, get full Control for much longer.</p>
@@ -42,7 +42,7 @@ const Footer = () => {
             </Col>
         </Row>
         <hr/>
-        <div class="d-flex justify-content-between">
+        <div class="secure-width w-100 d-flex flex-column flex-sm-row text-center justify-content-between">
             <p className="text-secondary">Copyright, Trabook 2022. All rights reserved.</p>
             <p className="text-secondary">Terms & Conditions</p>
         </div>
