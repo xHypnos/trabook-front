@@ -5,10 +5,9 @@ import Row from 'react-bootstrap/esm/Row';
 
 function DealCard({card}) {
     const {city, score, discount, price, img} = card;
-    console.log(city)
 
   return (
-    <Card className='hover-card-deal p-0 position-relative' style={{ width: '270px', height: '400px'}}>
+    <Card className='hover-card-deal p-0 position-relative mb-3' style={{ maxWidth: '270px', maxHeight: '400px'}}>
       <Card.Img className='w-100 overflow-hidden' variant="top" src={img} />
       <Button className='text-light px-4 fw-medium py-3 position-absolute top-50 start-50 translate-middle hover-button-deal' variant="primary">Book Now</Button>
       <Card.Body>

@@ -20,6 +20,90 @@ const SectionDeals = () => {
         getCardsData();
     },[]);
 
+    const testDataCard = {
+        city: {
+            name: 'Cucuta', country: {
+                name: 'Colombia'}
+            },
+        score: 4.8, 
+        discount: 800,
+        price: 950, 
+        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqigQyUpAcxLXChcyLnCLznSJa8TALIUmWS45uIJJNRHruFmj5GxnpGf51s1TOdeLgmPA&usqp=CAU'
+    };
+
+    const testListaCards = [
+        {
+            city: {
+            name: 'Cucuta', country: {
+                name: 'Colombia'}
+            },
+            score: 4.8, 
+            discount: 800,
+            price: 950, 
+            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqigQyUpAcxLXChcyLnCLznSJa8TALIUmWS45uIJJNRHruFmj5GxnpGf51s1TOdeLgmPA&usqp=CAU'
+        },
+        {
+            city: {
+            name: 'Cucuta', country: {
+                name: 'Colombia'}
+            },
+            score: 4.8, 
+            discount: 800,
+            price: 950, 
+            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqigQyUpAcxLXChcyLnCLznSJa8TALIUmWS45uIJJNRHruFmj5GxnpGf51s1TOdeLgmPA&usqp=CAU'
+        },
+        {
+            city: {
+            name: 'Cucuta', country: {
+                name: 'Colombia'}
+            },
+            score: 4.8, 
+            discount: 800,
+            price: 950, 
+            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqigQyUpAcxLXChcyLnCLznSJa8TALIUmWS45uIJJNRHruFmj5GxnpGf51s1TOdeLgmPA&usqp=CAU'
+        },
+        {
+            city: {
+            name: 'Cucuta', country: {
+                name: 'Colombia'}
+            },
+            score: 4.8, 
+            discount: 800,
+            price: 950, 
+            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqigQyUpAcxLXChcyLnCLznSJa8TALIUmWS45uIJJNRHruFmj5GxnpGf51s1TOdeLgmPA&usqp=CAU'
+        },
+        {
+            city: {
+            name: 'Cucuta', country: {
+                name: 'Colombia'}
+            },
+            score: 4.8, 
+            discount: 800,
+            price: 950, 
+            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqigQyUpAcxLXChcyLnCLznSJa8TALIUmWS45uIJJNRHruFmj5GxnpGf51s1TOdeLgmPA&usqp=CAU'
+        },
+        {
+            city: {
+            name: 'Cucuta', country: {
+                name: 'Colombia'}
+            },
+            score: 4.8, 
+            discount: 800,
+            price: 950, 
+            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqigQyUpAcxLXChcyLnCLznSJa8TALIUmWS45uIJJNRHruFmj5GxnpGf51s1TOdeLgmPA&usqp=CAU'
+        },
+        {
+            city: {
+            name: 'Cucuta', country: {
+                name: 'Colombia'}
+            },
+            score: 4.8, 
+            discount: 800,
+            price: 950, 
+            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqigQyUpAcxLXChcyLnCLznSJa8TALIUmWS45uIJJNRHruFmj5GxnpGf51s1TOdeLgmPA&usqp=CAU'
+        },
+];
+
     return <Container fluid className="p-5 d-flex flex-column align-items-center trabook-bg-sky">
         <Row className="secure-width">
             <Col>
@@ -27,18 +111,70 @@ const SectionDeals = () => {
                 <p className="text-center w-75 m-auto text-secondary">Discover our fantastic early booking discounts & start planning your journey.</p>
             </Col>
         </Row>
-        <Row className="secure-width gap-4 d-flex justify-content-around mt-5">
-            {cards && cards.length>0 ? (
-                cards.map((card) => {
-                    if (card.discount){
-                        return <DealCard as={Col} card={card}/>
+        {/* <Carousel className="secure-width w-100 p-0 m-0">
+            <Carousel.Item>
+                <Row className="w-100 d-flex justify-content-around mt-5">
+                    <DealCard as={Col} card={testDataCard}/>
+                    <DealCard as={Col} card={testDataCard}/>
+                    <DealCard as={Col} card={testDataCard}/>
+                    <DealCard as={Col} card={testDataCard}/>
+                </Row>
+            </Carousel.Item>
+            <Carousel.Item>
+                <Row className="w-100 d-flex justify-content-around mt-5">
+                    <DealCard as={Col} card={testDataCard}/>
+                    <DealCard as={Col} card={testDataCard}/>
+                    <DealCard as={Col} card={testDataCard}/>
+                    <DealCard as={Col} card={testDataCard}/>
+                </Row>
+            </Carousel.Item>
+            <Carousel.Item>
+                <Row className="w-100 d-flex justify-content-around mt-5">
+                    <DealCard as={Col} card={testDataCard}/>
+                    <DealCard as={Col} card={testDataCard}/>
+                    <DealCard as={Col} card={testDataCard}/>
+                    <DealCard as={Col} card={testDataCard}/>
+                </Row>
+            </Carousel.Item>
+        </Carousel> */}
+        <Carousel className="secure-width w-100 p-0 m-0">
+            {testListaCards && testListaCards.length>0 ? (
+                    testListaCards.map((card) => {
+                        if (card.discount){
+                            for(let i=0; i<4; i++){
+                                
+                            }
+                                                             
+                        }
+                           /*  return <Carousel.Item>
+                                <Row className="w-100 d-flex justify-content-around mt-5">
+                                    <DealCard as={Col} card={card}/>
+                                </Row>
+                            </Carousel.Item> */
+                        
                     }
+                )) : (
+                    <></>
+                    )
                 }
-            )) : (
-                <></>
-                )
-            }
-        </Row>
+            
+            <Carousel.Item>
+                <Row className="w-100 d-flex justify-content-around mt-5">
+                    <DealCard as={Col} card={testDataCard}/>
+                    <DealCard as={Col} card={testDataCard}/>
+                    <DealCard as={Col} card={testDataCard}/>
+                    <DealCard as={Col} card={testDataCard}/>
+                </Row>
+            </Carousel.Item>
+            <Carousel.Item>
+                <Row className="w-100 d-flex justify-content-around mt-5">
+                    <DealCard as={Col} card={testDataCard}/>
+                    <DealCard as={Col} card={testDataCard}/>
+                    <DealCard as={Col} card={testDataCard}/>
+                    <DealCard as={Col} card={testDataCard}/>
+                </Row>
+            </Carousel.Item>
+        </Carousel>
     </Container>
 };
 
