@@ -6,8 +6,22 @@ import { useState, useEffect } from "react";
 import { getCards } from "../api/trabookapi";
 import Carousel from 'react-bootstrap/Carousel';
 
+const CarouselItem = ({data}) => {
+    console.log(data)
+    return <Carousel.Item>
+        <Row className="w-100 d-flex justify-content-around mt-5">
+            {data.map((card,i) => {
+                <DealCard key={i} as={Col} card={card}/>
+                }
+            )}
+        </Row>  
+    </Carousel.Item>
+};
+
 const SectionDeals = () => {
     const [cards, setCards] = useState([]);
+    const cardGroups = [];
+
     useEffect(()=>{
         const getCardsData = async()=>{
             try{
@@ -64,7 +78,7 @@ const SectionDeals = () => {
         },
         {
             city: {
-            name: 'Cucuta', country: {
+            name: 'Bogota', country: {
                 name: 'Colombia'}
             },
             score: 4.8, 
@@ -74,7 +88,7 @@ const SectionDeals = () => {
         },
         {
             city: {
-            name: 'Cucuta', country: {
+            name: 'Bogota', country: {
                 name: 'Colombia'}
             },
             score: 4.8, 
@@ -84,7 +98,7 @@ const SectionDeals = () => {
         },
         {
             city: {
-            name: 'Cucuta', country: {
+            name: 'Bogota', country: {
                 name: 'Colombia'}
             },
             score: 4.8, 
@@ -94,7 +108,7 @@ const SectionDeals = () => {
         },
         {
             city: {
-            name: 'Cucuta', country: {
+            name: 'Bogota', country: {
                 name: 'Colombia'}
             },
             score: 4.8, 
@@ -102,7 +116,16 @@ const SectionDeals = () => {
             price: 950, 
             img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqigQyUpAcxLXChcyLnCLznSJa8TALIUmWS45uIJJNRHruFmj5GxnpGf51s1TOdeLgmPA&usqp=CAU'
         },
-];
+    ];
+
+    testListaCards && testListaCards.map((card)=>{
+        card.discount && cardGroups.push(card)
+    })
+
+    const gruposDe4 = [];
+    for (let i = 0; i < cardGroups.length; i += 4) {
+        gruposDe4.push(cardGroups.slice(i, i + 4));
+    }
 
     return <Container fluid className="p-5 d-flex flex-column align-items-center trabook-bg-sky">
         <Row className="secure-width">
@@ -111,69 +134,16 @@ const SectionDeals = () => {
                 <p className="text-center w-75 m-auto text-secondary">Discover our fantastic early booking discounts & start planning your journey.</p>
             </Col>
         </Row>
-        {/* <Carousel className="secure-width w-100 p-0 m-0">
-            <Carousel.Item>
-                <Row className="w-100 d-flex justify-content-around mt-5">
-                    <DealCard as={Col} card={testDataCard}/>
-                    <DealCard as={Col} card={testDataCard}/>
-                    <DealCard as={Col} card={testDataCard}/>
-                    <DealCard as={Col} card={testDataCard}/>
-                </Row>
-            </Carousel.Item>
-            <Carousel.Item>
-                <Row className="w-100 d-flex justify-content-around mt-5">
-                    <DealCard as={Col} card={testDataCard}/>
-                    <DealCard as={Col} card={testDataCard}/>
-                    <DealCard as={Col} card={testDataCard}/>
-                    <DealCard as={Col} card={testDataCard}/>
-                </Row>
-            </Carousel.Item>
-            <Carousel.Item>
-                <Row className="w-100 d-flex justify-content-around mt-5">
-                    <DealCard as={Col} card={testDataCard}/>
-                    <DealCard as={Col} card={testDataCard}/>
-                    <DealCard as={Col} card={testDataCard}/>
-                    <DealCard as={Col} card={testDataCard}/>
-                </Row>
-            </Carousel.Item>
-        </Carousel> */}
         <Carousel className="secure-width w-100 p-0 m-0">
-            {testListaCards && testListaCards.length>0 ? (
-                    testListaCards.map((card) => {
-                        if (card.discount){
-                            for(let i=0; i<4; i++){
-                                
-                            }
-                                                             
+            {gruposDe4 && gruposDe4.length>0 ? (
+                    gruposDe4.map((grupo, i) => {
+                        console.log(grupo)
+                        return <CarouselItem key={i} data={grupo}/>    
                         }
-                           /*  return <Carousel.Item>
-                                <Row className="w-100 d-flex justify-content-around mt-5">
-                                    <DealCard as={Col} card={card}/>
-                                </Row>
-                            </Carousel.Item> */
-                        
-                    }
                 )) : (
                     <></>
                     )
                 }
-            
-            <Carousel.Item>
-                <Row className="w-100 d-flex justify-content-around mt-5">
-                    <DealCard as={Col} card={testDataCard}/>
-                    <DealCard as={Col} card={testDataCard}/>
-                    <DealCard as={Col} card={testDataCard}/>
-                    <DealCard as={Col} card={testDataCard}/>
-                </Row>
-            </Carousel.Item>
-            <Carousel.Item>
-                <Row className="w-100 d-flex justify-content-around mt-5">
-                    <DealCard as={Col} card={testDataCard}/>
-                    <DealCard as={Col} card={testDataCard}/>
-                    <DealCard as={Col} card={testDataCard}/>
-                    <DealCard as={Col} card={testDataCard}/>
-                </Row>
-            </Carousel.Item>
         </Carousel>
     </Container>
 };
