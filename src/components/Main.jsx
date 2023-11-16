@@ -11,7 +11,7 @@ import ExploreForm from "./ExploreForm";
 
 const Main = () => {
     return <Container fluid className="p-5 d-flex flex-column align-items-center trabook-bg-sky">
-        <Row className="w-100 secure-with">
+        <Row className="w-100 secure-width">
             <Col className="mt-5 d-flex flex-column z-1 justify-content-center">
                 <h2 className="fs-1 mb-4">Get started your exciting <span className="text-primary">journey</span> with us.</h2>
                 <p className="mb-4">A Team of experienced tourism professionals will provide you with the best advice and tips for your desire place. </p>

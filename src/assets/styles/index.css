@@ -6,7 +6,7 @@ h1, h2, h3, h4, h5, h6, span{
   font-family: 'Volkhov', serif;
 }
 
-.secure-with{
+.secure-width{
   max-width: 1280px !important;
   margin: auto;
 }
@@ -35,4 +35,40 @@ h1, h2, h3, h4, h5, h6, span{
   transition: 400ms ease-in-out;
   cursor: pointer;
   transform: scale(1.05);
+}
+
+.hover-card-deal{
+  transition: 300ms ease-in-out;
+}
+
+.hover-card-deal:hover{
+  transition: 300ms ease-in-out;
+  cursor: pointer;
+  transform: scale(1.02);
+}
+
+.hover-button-deal{
+  transition: 300ms ease-in-out;
+  display: none !important;
+}
+
+.hover-card-deal:hover .hover-button-deal{
+  display: block !important;
+  transition: 300ms ease-in-out;
+}
+
+.enlace-redes a ion-icon{
+  font-size: 1.2rem;
+  color: #444;
+  border-radius: 50%;
+  padding: 6px;
+  background-color: #fff;
+  box-shadow: #888 0px 0px 3px;
+  transition: 300ms ease-in-out;
+}
+
+.enlace-redes a ion-icon:hover{
+  transition: 300ms ease-in-out;
+  background-color: #FA7436;
+  color: #fff;
 }
