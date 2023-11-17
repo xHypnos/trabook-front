@@ -1,7 +1,6 @@
 const getCards = async() => {
     try{
-        /* const response = await fetch('http://127.0.0.1:8000/api/cards/'); */
-        const response = await fetch('https://trabook.onrender.com/api/cards/');
+        const response = await fetch('http://127.0.0.1:8000/api/cards/');
         if(!response.ok){
             throw new Error("Error al conectar con api");
         }
