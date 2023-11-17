@@ -1,14 +1,12 @@
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/esm/Col';
 import Row from 'react-bootstrap/esm/Row';
 
 function VacationCard({card}) {
-    const {city, score, discount, price, img, days} = card;
-    console.log(city)
+  const {city, score, discount, price, img, days} = card;
 
   return (
-    <Card className='hover-card-deal p-0 position-relative' style={{ width: '300px', height: '400px'}}>
+    <Card className='hover-card-deal p-0 position-relative mb-3' style={{ width: '300px', height: '400px'}}>
       <Card.Img className='w-100 overflow-hidden' variant="top" src={img} />
       <Card.Body>
         <Row>

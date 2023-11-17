@@ -6,18 +6,6 @@ import { useState, useEffect } from "react";
 import { getCards } from "../api/trabookapi";
 import Carousel from 'react-bootstrap/Carousel';
 
-const CarouselItem = ({data}) => {
-    console.log(data)
-    return <Carousel.Item>
-        <Row className="w-100 d-flex justify-content-around mt-5">
-            {data.map((card,i) => {
-                <DealCard key={i} as={Col} card={card}/>
-                }
-            )}
-        </Row>  
-    </Carousel.Item>
-};
-
 const SectionDeals = () => {
     const [cards, setCards] = useState([]);
     const cardGroups = [];
@@ -34,91 +22,7 @@ const SectionDeals = () => {
         getCardsData();
     },[]);
 
-    const testDataCard = {
-        city: {
-            name: 'Cucuta', country: {
-                name: 'Colombia'}
-            },
-        score: 4.8, 
-        discount: 800,
-        price: 950, 
-        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqigQyUpAcxLXChcyLnCLznSJa8TALIUmWS45uIJJNRHruFmj5GxnpGf51s1TOdeLgmPA&usqp=CAU'
-    };
-
-    const testListaCards = [
-        {
-            city: {
-            name: 'Cucuta', country: {
-                name: 'Colombia'}
-            },
-            score: 4.8, 
-            discount: 800,
-            price: 950, 
-            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqigQyUpAcxLXChcyLnCLznSJa8TALIUmWS45uIJJNRHruFmj5GxnpGf51s1TOdeLgmPA&usqp=CAU'
-        },
-        {
-            city: {
-            name: 'Cucuta', country: {
-                name: 'Colombia'}
-            },
-            score: 4.8, 
-            discount: 800,
-            price: 950, 
-            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqigQyUpAcxLXChcyLnCLznSJa8TALIUmWS45uIJJNRHruFmj5GxnpGf51s1TOdeLgmPA&usqp=CAU'
-        },
-        {
-            city: {
-            name: 'Cucuta', country: {
-                name: 'Colombia'}
-            },
-            score: 4.8, 
-            discount: 800,
-            price: 950, 
-            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqigQyUpAcxLXChcyLnCLznSJa8TALIUmWS45uIJJNRHruFmj5GxnpGf51s1TOdeLgmPA&usqp=CAU'
-        },
-        {
-            city: {
-            name: 'Bogota', country: {
-                name: 'Colombia'}
-            },
-            score: 4.8, 
-            discount: 800,
-            price: 950, 
-            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqigQyUpAcxLXChcyLnCLznSJa8TALIUmWS45uIJJNRHruFmj5GxnpGf51s1TOdeLgmPA&usqp=CAU'
-        },
-        {
-            city: {
-            name: 'Bogota', country: {
-                name: 'Colombia'}
-            },
-            score: 4.8, 
-            discount: 800,
-            price: 950, 
-            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqigQyUpAcxLXChcyLnCLznSJa8TALIUmWS45uIJJNRHruFmj5GxnpGf51s1TOdeLgmPA&usqp=CAU'
-        },
-        {
-            city: {
-            name: 'Bogota', country: {
-                name: 'Colombia'}
-            },
-            score: 4.8, 
-            discount: 800,
-            price: 950, 
-            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqigQyUpAcxLXChcyLnCLznSJa8TALIUmWS45uIJJNRHruFmj5GxnpGf51s1TOdeLgmPA&usqp=CAU'
-        },
-        {
-            city: {
-            name: 'Bogota', country: {
-                name: 'Colombia'}
-            },
-            score: 4.8, 
-            discount: 800,
-            price: 950, 
-            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqigQyUpAcxLXChcyLnCLznSJa8TALIUmWS45uIJJNRHruFmj5GxnpGf51s1TOdeLgmPA&usqp=CAU'
-        },
-    ];
-
-    testListaCards && testListaCards.map((card)=>{
+    cards && cards.map((card)=>{
         card.discount && cardGroups.push(card)
     })
 
@@ -134,16 +38,17 @@ const SectionDeals = () => {
                 <p className="text-center w-75 m-auto text-secondary">Discover our fantastic early booking discounts & start planning your journey.</p>
             </Col>
         </Row>
-        <Carousel className="secure-width w-100 p-0 m-0">
-            {gruposDe4 && gruposDe4.length>0 ? (
-                    gruposDe4.map((grupo, i) => {
-                        console.log(grupo)
-                        return <CarouselItem key={i} data={grupo}/>    
-                        }
-                )) : (
-                    <></>
-                    )
-                }
+        <Carousel className="secure-width position-relative w-100 p-0 m-0">
+            {gruposDe4.map((grupo, i) => {
+                    return <Carousel.Item  key={i} data={grupo}>
+                        <Row className="w-100 d-flex justify-content-around mt-5">
+                            {grupo.map((card,i) => {
+                                return <DealCard key={i} as={Col} card={card}/>
+                                }
+                            )}
+                        </Row> 
+                    </Carousel.Item>    
+                })}
         </Carousel>
     </Container>
 };

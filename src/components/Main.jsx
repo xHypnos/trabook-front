@@ -20,7 +20,7 @@ const Main = () => {
             <Col className="d-flex justify-content-center position-relative">
                 <img className="z-1" style={{maxWidth: '400px'}} src={ImageBanner} width={'80%'} alt="banner"/>
                 <img className="position-absolute z-0 top-0 start-0 translate-middle" src={AirplanesImg} alt="airplanes"/>
-                <img className="hover-card position-absolute z-2 top-50 start-0 translate-middle-y" src={Card1Img} alt="card"/>
+                <img className="hover-card position-absolute z-2 bottom-50 start-0" src={Card1Img} alt="card"/>
                 <img className="hover-card position-absolute z-2 top-50 start-50" src={Card2Img} alt="card"/>
                 <img className="hover-card position-absolute z-2 bottom-0 end-50 " src={Card3Img} alt="card"/>
             </Col>
