@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button';
 
 const Header = () => {
     return <Container fluid className='p-3 d-flex flex-column justify-content-center trabook-bg-sky'>
-        <Row className='w-100 secure-width'>
+        <Row className='w-100 secure-width m-auto'>
             <Col className='d-flex justify-content-center align-items-center'>
                 <h1 className='fs-3 m-0'>Trabook </h1>
                 <img className='ms-2' src={TrabookLogo} alt='logo'/>

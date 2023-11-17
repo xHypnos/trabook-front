@@ -42,7 +42,7 @@ const Footer = () => {
             </Col>
         </Row>
         <hr/>
-        <div class="secure-width w-100 d-flex flex-column flex-sm-row text-center justify-content-between">
+        <div className="secure-width w-100 d-flex flex-column flex-sm-row text-center justify-content-between">
             <p className="text-secondary">Copyright, Trabook 2022. All rights reserved.</p>
             <p className="text-secondary">Terms & Conditions</p>
         </div>
